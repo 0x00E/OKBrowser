@@ -1,2 +1,2 @@
-# OKBrowser
-a simple browser
+# MCBBS-Android
+MCBBS Android App

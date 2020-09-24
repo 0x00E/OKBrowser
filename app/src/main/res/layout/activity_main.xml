@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/dl_main_drawer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+    style="@style/SelectableItem"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    >
+            <EditText
+                android:id="@+id/title_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:layout_gravity="center_horizontal"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:selectAllOnFocus="true"
+                android:imeOptions="actionGo"
+                android:text="@string/app_name"/>
+
+
+
+    <com.github.qianniancc.okbrowser.TopBarView
+        android:id="@+id/topbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        custom:leftBtn="@drawable/back_page"
+        custom:rightBtn="@drawable/forward_page"
+        custom:titleColor="@android:color/white"
+        custom:titleSize="10dp"
+        custom:titleText="@string/app_name" />
+
+    <at.pardus.android.webview.gm.run.WebViewGm
+        android:id="@+id/wView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         android:layout_weight="1"
+        android:layout_above="@+id/bar"
+        >
+    </at.pardus.android.webview.gm.run.WebViewGm>
+
+    <com.github.qianniancc.okbrowser.util.BottomNavigationViewEx
+        android:id="@+id/bottom_navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/grey"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/menu_bottom_navigation" />
+</LinearLayout>
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nv_main_navigation"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@layout/drawer_view"/>
+
+</android.support.v4.widget.DrawerLayout>
+
